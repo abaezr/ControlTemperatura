@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author andresbaezrincon
  */
 public class ControlTemperatura {
-        
+        int variable = 2;
   
     /**
      * @param args the command line arguments

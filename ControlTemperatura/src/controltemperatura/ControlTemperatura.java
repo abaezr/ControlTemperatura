@@ -76,11 +76,12 @@ public class ControlTemperatura {
                     for(int i=0;i<listaPersona.size();i++){
                         System.out.println((i+1)+". "+listaPersona.get(i).Nombre);
                     }
-                     System.out.println("\nSeleccione el numero del nombre de la persona a elminiar:");
+                     System.out.print("Seleccione el numero del nombre de la persona a elminiar: ");
                      opcion = Integer.parseInt(entradateclado.nextLine());
-                     listaPersona.remove(listaPersona.get(opcion));                     }
+                     listaPersona.remove((opcion-1));
+                    }
                 break;
-                
+              
                 case 5:
                 
                 break;

@@ -60,13 +60,16 @@ public class DesarrolloPrograma {
                 break;
                 
                 case 3:
+                    if(listaPersona.size() < 1)
+                        System.out.println("No hay personas registradas");
+                    else{
                     for(int i=0;i<listaPersona.size();i++){
                         System.out.println((i+1)+". "+listaPersona.get(i).Nombre);
                     }
                      System.out.print("Seleccione el numero del nombre de la persona a ingresar temperatura: ");
                      int opcionPersona = Integer.parseInt(entradateclado.nextLine());
                      listaTemperatura.add(new Temperatura(opcionPersona-1));
-               
+                    }
                 break;
                 
                 case 4:

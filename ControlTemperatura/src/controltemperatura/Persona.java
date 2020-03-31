@@ -17,7 +17,6 @@ public class Persona {
     String Nombre;
     int Edad;
     String Parentesco;
-    ArrayList<Persona> listaTemperatura= new ArrayList<Persona>();
     Persona(){
         this.Nombre = ingresoNombre();
         this.Edad = ingresoEdad();

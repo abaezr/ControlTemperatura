@@ -5,6 +5,7 @@
  */
 package controltemperatura;
 
+import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -12,6 +13,16 @@ import java.util.Vector;
  * @author andresbaezrincon
  */
 public class Temperatura {
-        Vector<Persona> vector = new Vector<Persona>();
-
+        Scanner entradateclado = new Scanner(System.in);
+        float temperatura;
+        int indice;
+        Temperatura(int index){
+            this.temperatura= (ingresoTemperatura());
+            this.indice = index;
+        }
+        float ingresoTemperatura(){
+            System.out.print("Ingrese la temperatura: ");
+            float temp = Float.valueOf(entradateclado.nextLine());
+            return temp;
+        }
 }

@@ -1,17 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controltemperatura;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Vector;
-
-/**
- *
- * @author andresbaezrincon
- */
 public class Persona {
     Scanner entradaTeclado = new Scanner(System.in);
     String Nombre;
@@ -31,7 +19,11 @@ public class Persona {
     int ingresoEdad(){
         int Edad;
         System.out.print("Ingrese la edad de la persona: ");
-        Edad = Integer.parseInt(entradaTeclado.nextLine());  
+        Edad = Integer.parseInt(entradaTeclado.nextLine());
+        while (Edad <=0){
+            System.out.print("Edad no valida. Ingrese una nueva edad: ");
+            Edad = Integer.parseInt(entradaTeclado.nextLine());
+        }
         return Edad;
     }
     String ingresoParentesco(){

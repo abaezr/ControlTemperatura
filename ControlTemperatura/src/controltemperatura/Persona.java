@@ -24,7 +24,7 @@ public class Persona {
     }
     String ingresoNombre(){
         String Nombre;
-        System.out.print("Ingrese el nombre de la persona: ");
+        System.out.print("\nIngrese el nombre de la persona: ");
         Nombre = entradaTeclado.nextLine();  
         return Nombre;
     }

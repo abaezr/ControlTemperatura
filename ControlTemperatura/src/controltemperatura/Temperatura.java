@@ -16,9 +16,9 @@ public class Temperatura {
         Scanner entradateclado = new Scanner(System.in);
         float temperatura;
         int indice;
-        Temperatura(int index){
-            this.temperatura= (ingresoTemperatura());
-            this.indice = index;
+
+        Temperatura(){
+            
         }
         float ingresoTemperatura(){
             System.out.print("Ingrese la temperatura: ");

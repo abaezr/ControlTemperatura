@@ -7,6 +7,7 @@ package controltemperatura;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Vector;
 
 /**
  *
@@ -17,7 +18,9 @@ public class DesarrolloPrograma {
         public void metodo(){
         Scanner entradateclado = new Scanner(System.in);
         ArrayList<Persona> listaPersona = new ArrayList<Persona>();
-        ArrayList<Temperatura> listaTemperatura = new ArrayList<Temperatura>();
+        Vector<Float> vectorTemperatura = new Vector<Float>();
+        Vector<Integer> vectorDueño = new Vector<Integer>();
+        Temperatura temp = new Temperatura();
         boolean seguir=true;
         int opc,edad;
         while(seguir ==true){
@@ -25,13 +28,14 @@ public class DesarrolloPrograma {
             System.out.println("*                               *");
             System.out.println("*  1. Ingresar Nueva Persona    *");
             System.out.println("*  2. Ver lista de Personas     *");            
-            System.out.println("*  3. Ingresar o modificar      *");
-            System.out.println("*     temperatura               *");
+            System.out.println("*  3. Ingresar Nueva            *");
+            System.out.println("*     Temperatura               *");
             System.out.println("*  4. Eliminar Persona          *");
             System.out.println("*  5. Generar Reporte           *");
             System.out.println("*  6. Salir                     *");
             System.out.println("*                               *");
             System.out.println("*********************************");
+            System.out.println("\n---------------------------------\n");
             System.out.print("Ingrese la opcion a realizar: ");
             opc = Integer.parseInt(entradateclado.nextLine());
             switch (opc){
@@ -68,7 +72,8 @@ public class DesarrolloPrograma {
                     }
                      System.out.print("Seleccione el numero del nombre de la persona a ingresar temperatura: ");
                      int opcionPersona = Integer.parseInt(entradateclado.nextLine());
-                     listaTemperatura.add(new Temperatura(opcionPersona-1));
+                     vectorDueño.add(opcionPersona-1);
+                     vectorTemperatura.add(temp.ingresoTemperatura());
                     }
                 break;
                 
@@ -94,19 +99,17 @@ public class DesarrolloPrograma {
                         System.out.println("REPORTE DE TEMPERATURAS");
                         System.out.println("-----------------------------");
                         for(int i=0;i<listaPersona.size();i++){
-                            for(int j=0;j<listaPersona.size();j++){
-                            if(listaTemperatura.get(i).indice == j){
-                            System.out.println("\n");
-                            System.out.print("Nombre: ");
-                            System.out.println(listaPersona.get(j).Nombre);
-                            System.out.print("Temperatura: ");
-                            System.out.println(listaTemperatura.get(i).temperatura);
-                            System.out.println("\n");
+                            System.out.println("Nombre: "+listaPersona.get(i).Nombre);
+                           System.out.println("Temperatura "+(i+1)+": ");
+                            for(int j=0;j<vectorDueño.size();j++){
+                            if(vectorDueño.get(j) == i){
+                                System.out.println(vectorTemperatura.get(j));
                             }
                             }
+                        }
                             
                         }
-                    }
+                    
                 break;
                 case 6:
                 System.exit(0);
